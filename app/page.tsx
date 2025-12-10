@@ -10,10 +10,10 @@ export default function Home() {
 
 			<div className="space-y-8">
 				<p className="text-base text-muted leading-relaxed">
-					Welcome to my personal website. I'm a Computer Science student at LUMS
-					passionate about Machine Learning, AI safety, and interpretability.
-					Here you'll find my thoughts on research, projects, and insights into
-					AI systems.
+					Welcome to my personal website. I&apos;m a Computer Science student at
+					LUMS passionate about Machine Learning, AI safety, and
+					interpretability. Here you&apos;ll find my thoughts on research,
+					projects, and insights into AI systems.
 				</p>
 
 				<div className="space-y-4">
