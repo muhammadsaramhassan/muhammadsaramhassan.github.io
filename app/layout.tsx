@@ -1,33 +1,36 @@
 import type { Metadata } from "next";
-import { Inter, Merriweather } from "next/font/google";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const merriweather = Merriweather({
-	subsets: ["latin"],
-	weight: ["400", "700"],
-	variable: "--font-merriweather",
-});
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import WordBubbles from "@/components/WordBubbles";
+import QuoteSidebar from "@/components/QuoteSidebar";
 
 export const metadata: Metadata = {
-	title: "Muhammad Saram Hassan - Personal Website",
-	description: "Saram's academic personal website",
+	title: "M Saram Hassan",
+	description:
+		"Personal academic portfolio showcasing research, publications, and projects",
+	authors: [{ name: "Your Name" }],
+	keywords: ["research", "academia", "portfolio", "publications"],
+	openGraph: {
+		title: "M Saram Hassan",
+		description:
+			"Personal academic portfolio showcasing research, publications, and projects",
+		type: "website",
+	},
 };
 
 export default function RootLayout({
 	children,
-}: {
+}: Readonly<{
 	children: React.ReactNode;
-}) {
+}>) {
 	return (
 		<html lang="en">
-			<body className="min-h-screen flex flex-col">
-				<Header />
-				<main id="main" className="flex-grow pt-20">
-					{children}
-				</main>
+			<body className="antialiased">
+				<Navigation />
+				<WordBubbles />
+				<QuoteSidebar />
+				<main className="min-h-screen">{children}</main>
 				<Footer />
 			</body>
 		</html>

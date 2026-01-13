@@ -1,23 +1,20 @@
-import Link from "next/link";
-
 export default function Footer() {
+	const currentYear = new Date().getFullYear();
+
 	return (
-		<footer className="bg-muted py-8">
-			<div className="max-w-[900px] mx-auto px-6">
-				<div className="flex justify-between items-center">
-					<p className="text-sm text-muted">© 2025 Your Name</p>
-					<div className="flex space-x-4">
-						<Link href="/rss" className="text-sm text-muted hover:text-text">
-							RSS
-						</Link>
-						<Link
-							href="/contact"
-							className="text-sm text-muted hover:text-text">
-							Contact
-						</Link>
-					</div>
-				</div>
-			</div>
+		<footer className="px-6 md:px-12 py-16 border-t border-border mt-16 relative z-10">
+			<p className="text-text-dim text-[13px] m-0">
+				© Copyright {currentYear} Muhammad Saram Hassan.
+				{/* . Words from{" "} */}
+				{/* <a
+					href="https://www.dictionaryofobscuresorrows.com/"
+					className="text-primary no-underline hover:underline"
+					target="_blank"
+					rel="noopener noreferrer">
+					Dictionary of Obscure Sorrows
+				</a>
+				. */}
+			</p>
 		</footer>
 	);
 }
