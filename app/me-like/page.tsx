@@ -1,22 +1,20 @@
+import { text } from "stream/consumers";
+
 export default function MeLike() {
 	const quotes = [
 		{
-			text: "The test of a first-rate intelligence is the ability to hold two opposed ideas in mind at the same time and still retain the ability to function.",
-			author: "F. Scott Fitzgerald",
-			source: "The Crack-Up",
+			text: ".جس پہ احسان کرو، اسکے شر سے بچو",
+			author: "Imam Ali (AS)",
 		},
 		{
-			text: "I am large, I contain multitudes.",
-			author: "Walt Whitman",
-			source: "Song of Myself",
+			text: "We only truly live by following the imagination of our nine year old self.",
+			author: "Aradshar Chaddar (2004-2025)",
+			source: "President USA & a Friend",
 		},
 		{
-			text: "We shape our tools and thereafter our tools shape us.",
-			author: "Marshall McLuhan",
-		},
-		{
-			text: "The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well.",
-			author: "Ralph Waldo Emerson",
+			text: "But only in their dreams can men be truly free. ‘Twas always thus, and always thus will be.",
+			author: "John Keating",
+			source: "Dead Poets Society",
 		},
 	];
 
@@ -103,7 +101,7 @@ export default function MeLike() {
 
 			{/* Quotes */}
 			<section className="mb-16">
-				<h2 className="text-3xl mb-6">quotes</h2>
+				<h2 className="text-3xl mb-6">Quotes to live by</h2>
 				<hr className="mb-8" />
 
 				<div className="space-y-8">
@@ -239,8 +237,8 @@ export default function MeLike() {
 			<hr className="my-8" />
 
 			<p className="text-sm text-text-muted italic">
-				This page is a living document—I update it as I discover new things that
-				shift my thinking or bring me joy.
+				This page is a living document - I update it as I discover new things
+				that shift my thinking or bring me joy.
 			</p>
 		</div>
 	);

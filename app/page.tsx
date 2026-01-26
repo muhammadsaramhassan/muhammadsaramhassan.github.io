@@ -96,13 +96,7 @@ export default function Home() {
 						</p>
 
 						<p className="text-base md:text-[1.05rem] leading-[1.7]">
-							Please see my{" "}
-							<Link
-								href="/agenda"
-								className="text-primary no-underline border-[1.5px] border-primary rounded-[20px] px-3.5 py-1 inline-block transition-all hover:bg-primary/10">
-								agenda
-							</Link>{" "}
-							and my{" "}
+							Please see my and my{" "}
 							<Link
 								href="/cv"
 								className="text-primary no-underline border-[1.5px] border-primary rounded-[20px] px-3.5 py-1 inline-block transition-all hover:bg-primary/10">

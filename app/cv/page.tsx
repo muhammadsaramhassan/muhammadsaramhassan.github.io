@@ -37,9 +37,8 @@ export default function CV() {
 			year: "Jan 2025 - Present",
 			supervisor: "Supervised by Dr. Fareed Zaffar and Dr. Yasir Zaki",
 			details: [
-				"Investigated knowledge retention and transferability in fine-tuned LLMs across model sizes (1.5B-72B parameters)",
-				"Discovered comprehension-based tasks achieved 48% retention vs. 17% for surface-level tasks",
-				"Observed scaling improvements in knowledge retention from 38% to 72% across models",
+				"Investigated knowledge retention and transferability in fine-tuned LLMs across model sizes",
+				"Discovered comprehension-based tasks to achieve 48% retention of fine-tuned knowledge compared to only 17% transfer in surface-level tasks",
 				"Published at EMNLP Findings 2025",
 			],
 		},
@@ -59,22 +58,21 @@ export default function CV() {
 			organization: "CMU CyLab",
 			location: undefined,
 			year: "September 2025 - Present",
-			supervisor: "Supervised by Dr. Fareed Zaffar and Dr. Taha Khan",
+			supervisor: "Supervised by Dr. Taha Khan & Dr. Fareed Zaffar",
 			details: [
 				"Leading Systematization of Knowledge (SoK) on vulnerabilities in autonomous LLM-based web agents",
 				"Built adversarial testbed demonstrating MCP poisoning, prompt injection, and visual spoofing attacks",
-				"Developing behavioral fingerprinting framework analyzing HTTP headers, DOM patterns, and timing signatures",
-				"Discovered LLM browsers bypass robots.txt while masquerading as humans",
+				"Developing behavioral fingerprinting framework analyzing HTTP headers, DOM patterns, and timing signatures to distinguish agents from humans",
 			],
 		},
 		{
-			title: "Research Assistant",
+			title: "Student Researcher",
 			organization: "CITY Lab, LUMS",
 			location: undefined,
-			year: "Sep 2024 – May 2025",
+			year: "Sep 2024 - May 2025",
 			supervisor: "Supervised by Dr. Muhammad Tahir",
 			details: [
-				"Developed bias-aware pruning framework for CNNs and Vision Transformers",
+				"Exploratory work on a theoretical bias-aware pruning framework for CNNs and Vision Transformers",
 				"Implemented interpretable pruning methodology for selective bias retention/removal",
 				"Introduced filter-locking mechanism preserving domain-invariant features",
 			],
@@ -85,11 +83,10 @@ export default function CV() {
 		{
 			title:
 				"LLM Password Generation: Security, Usability, and Policy Compliance",
-			year: "Present",
+			year: "June 2025 - August 2025",
 			details: [
-				"Evaluating LLM-generated passwords across security, usability, and policy compliance dimensions",
-				"Analyzing how model size, temperature, and prompting strategies affect generation quality",
-				"Collaboration with CMU CyLab (Dr. Taha Khan)",
+				"Evaluated LLM-generated passwords across security, usability, and policy compliance dimensions; analyzed how model size, temperature, and prompting strategies affect generation quality",
+				"Work conducted with CMU CyLab",
 			],
 		},
 		{
@@ -99,7 +96,7 @@ export default function CV() {
 				"Led cross-functional team of 100+ students with Uplift AI (YC startup)",
 				"Collected and curated 35,000+ regional language speech samples",
 				"Designed quality control pipelines ensuring 95%+ transcription accuracy",
-				"Contributed to UpliftAI securing Y-Combinator funding",
+				"Work contributed to UpliftAI securing Y-Combinator funding",
 			],
 		},
 		{
@@ -131,12 +128,12 @@ export default function CV() {
 			venue: "CS-100: Computational Problem Solving (Dr. Fareed Zaffar, LUMS)",
 		},
 		{
-			role: "Instructor",
+			role: "Student Instructor",
 			venue:
 				"Fundamentals of Machine Learning (LUMS Science School & UpliftAI)",
 		},
 		{
-			role: "Instructor",
+			role: "Student Instructor",
 			venue:
 				"Exploring the Universe with Code: CS for Astronomy (FAST University)",
 		},
@@ -313,7 +310,7 @@ export default function CV() {
 
 			{/* Skills */}
 			<section className="mb-14">
-				<h2 className="text-3xl mb-6 text-primary">technical skills</h2>
+				<h2 className="text-3xl mb-6 text-primary">Technical Skills</h2>
 				<hr className="mb-8 border-gray-300" />
 
 				<div className="space-y-5">
@@ -330,8 +327,8 @@ export default function CV() {
 							Frameworks
 						</span>
 						<span className="text-base text-foreground leading-relaxed flex-1">
-							React, Node.js, WordPress, PyTorch, Hugging Face (Transformers,
-							Diffusers, timm, unsloth)
+							PyTorch, Hugging Face (Transformers, Diffusers, timm, unsloth),
+							TensorFlow, WordPress
 						</span>
 					</div>
 					<div className="flex gap-4">
@@ -339,7 +336,7 @@ export default function CV() {
 							Tools
 						</span>
 						<span className="text-base text-foreground leading-relaxed flex-1">
-							Git, Docker, VS Code, LLVM, LangChain
+							Git, Docker, LangChain, Figma
 						</span>
 					</div>
 				</div>

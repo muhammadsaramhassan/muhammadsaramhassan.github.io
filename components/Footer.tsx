@@ -15,6 +15,17 @@ export default function Footer() {
 				</a>
 				. */}
 			</p>
+			<p className="text-text-dim text-[13px] m-0">
+				Inspired by{" "}
+				<a
+					href="https://github.com/alshedivat/al-folio"
+					className="text-primary no-underline hover:underline"
+					target="_blank"
+					rel="noopener noreferrer">
+					al-folio theme
+				</a>
+				.
+			</p>
 		</footer>
 	);
 }

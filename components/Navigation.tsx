@@ -12,7 +12,6 @@ export default function Navigation() {
 
 	const navLinks = [
 		{ href: "/", label: "about" },
-		{ href: "/agenda", label: "agenda" },
 		{ href: "/cv", label: "cv" },
 	];
 
