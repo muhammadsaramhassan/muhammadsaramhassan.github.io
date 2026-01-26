@@ -33,19 +33,23 @@ export default function Home() {
 				<div className="flex flex-col md:flex-row gap-10 items-start mb-20">
 					<div className="flex-1">
 						<p className="text-base md:text-lg leading-[1.8] mb-5">
-							I am a researcher working in{" "}
+							Hi! I am a final year computer science student at LUMS working at
+							the intersection of{" "}
 							<strong className="text-primary font-semibold">
-								AI safety and Interpretability
+								ML systems, interpretability and AI safety
 							</strong>
-							, collaborating across CMU CyLab, Stanford Research Institute, and
-							NYU Abu Dhabi. When we deploy LLMs as autonomous agents, we
-							implicitly trust that their outputs reflect genuine understanding.
-							I want to interrogate and formalize this trust: developing precise
-							vocabulary to describe when models truly grasp concepts versus
-							merely pattern-match surface associations. My philosophical
-							commitments are to transparency and robustness: I believe we
-							cannot responsibly deploy AI systems we cannot explain, and we
-							cannot trust systems that shatter under adversarial pressure.
+							. I build and study models with a focus on understanding how they
+							represent and process information. I'm interested in questions
+							like:{" "}
+							<strong className="text-primary">
+								What do certain neurons encode? How do models generalize beyond
+								their training distribution? And how can we build trustworthy
+								systems that are both capable and understandable?
+							</strong>{" "}
+							I've contributed to research published at EMNLP, collaborated with
+							researchers at Stanford and CMU, and led technical teams building
+							real-world ML systems. Beyond research, I'm a passionate amateur
+							astronomer (see <u>my work</u> here) and an avid mountains fan.
 						</p>
 
 						<p className="text-base md:text-[1.05rem] leading-[1.7] mb-4">

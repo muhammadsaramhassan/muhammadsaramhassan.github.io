@@ -25,8 +25,8 @@
 	--color-text-secondary: var(--text-secondary);
 	--color-text-muted: var(--text-muted);
 	--color-border: var(--border);
-	--font-sans: "Lexend", system-ui, -apple-system, BlinkMacSystemFont,
-		sans-serif;
+	--font-sans:
+		"Lexend", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 	--font-serif: "Lexend", Georgia, "Times New Roman", serif;
 	--font-display: "Lexend", Georgia, serif;
 	--font-mono: "Lexend", "Fira Code", Monaco, Consolas, monospace;
@@ -68,7 +68,6 @@ h5,
 h6 {
 	font-family: var(--font-display);
 	font-weight: 400;
-	color: var(--foreground);
 }
 
 h1 {

@@ -22,34 +22,21 @@ export default function CV() {
 		{
 			degree: "Bachelor of Science in Computer Science",
 			institution: "Lahore University of Management Sciences (LUMS)",
-			year: "Aug 2022 – May 2026 (Expected)",
-			advisor: undefined,
+			year: "Aug 2022 - May 2026 (Expected)",
+			advisor: "Fareed Zaffar",
 			details:
-				"Dean's Honor List (2022-2025) · Graduate Coursework: Advanced Topics in ML, Foundations of Generative AI, Topics in Network Security, Distributed Systems",
+				"Dean's Honor List (2022-2025) · Graduate Coursework: Advanced Topics in ML, Foundations of Generative AI, Topics in Network Security, Distributed Systems, HCI",
 		},
 	];
 
 	const experience = [
 		{
-			title: "Research Intern",
-			organization: "Stanford Research Institute (SRI) International",
-			location: undefined,
-			year: "Aug 2025 – Present",
-			details: [
-				"Supervised by Dr. Ashish Gehani and Dr. Ramneet Kaur",
-				"Developing model-agnostic evaluation framework to distinguish genuine conceptual understanding from brittle pattern matching",
-				"Designed dual-metric system: Behavioral Consistency Score and Representation Consistency Score",
-				"Introduced Concept Coherence Index (CCI) with Latent Direction Score (LDS) for causal probing via Sparse Autoencoders",
-				"Targeting ICML 2026",
-			],
-		},
-		{
 			title: "Research Assistant",
-			organization: "TPI Lab, LUMS & CommNets Lab, NYUAD",
+			organization: "CommNets Lab, NYU Abu Dhabi & TPI, LUMS",
 			location: undefined,
-			year: "Jan 2025 – Jul 2025",
+			year: "Jan 2025 - Present",
+			supervisor: "Supervised by Dr. Fareed Zaffar and Dr. Yasir Zaki",
 			details: [
-				"Supervised by Dr. Fareed Zaffar (LUMS) and Dr. Yasir Zaki (NYU Abu Dhabi)",
 				"Investigated knowledge retention and transferability in fine-tuned LLMs across model sizes (1.5B-72B parameters)",
 				"Discovered comprehension-based tasks achieved 48% retention vs. 17% for surface-level tasks",
 				"Observed scaling improvements in knowledge retention from 38% to 72% across models",
@@ -57,15 +44,26 @@ export default function CV() {
 			],
 		},
 		{
-			title: "Research Assistant",
-			organization: "Security & Privacy Lab, LUMS",
+			title: "Research Intern",
+			organization: "Stanford Research Institute (SRI) International",
 			location: undefined,
-			year: "Ongoing",
+			year: "Aug 2025 - Present",
+			supervisor: "Supervised by Dr. Ashish Gehani and Dr. Ramneet Kaur",
 			details: [
-				"Supervised by Dr. Fareed Zaffar (LUMS) and Dr. Taha Khan (CMU CyLab)",
+				"Developing model-agnostic evaluation framework to distinguish genuine conceptual understanding from brittle pattern matching",
+				"Analyzing failure modes under distribution shifts to identify spurious correlations",
+			],
+		},
+		{
+			title: "Research Intern",
+			organization: "CMU CyLab",
+			location: undefined,
+			year: "September 2025 - Present",
+			supervisor: "Supervised by Dr. Fareed Zaffar and Dr. Taha Khan",
+			details: [
 				"Leading Systematization of Knowledge (SoK) on vulnerabilities in autonomous LLM-based web agents",
 				"Built adversarial testbed demonstrating MCP poisoning, prompt injection, and visual spoofing attacks",
-				"Developed behavioral fingerprinting framework analyzing HTTP headers, DOM patterns, and timing signatures",
+				"Developing behavioral fingerprinting framework analyzing HTTP headers, DOM patterns, and timing signatures",
 				"Discovered LLM browsers bypass robots.txt while masquerading as humans",
 			],
 		},
@@ -74,8 +72,8 @@ export default function CV() {
 			organization: "CITY Lab, LUMS",
 			location: undefined,
 			year: "Sep 2024 – May 2025",
+			supervisor: "Supervised by Dr. Muhammad Tahir",
 			details: [
-				"Supervised by Dr. Muhammad Tahir",
 				"Developed bias-aware pruning framework for CNNs and Vision Transformers",
 				"Implemented interpretable pruning methodology for selective bias retention/removal",
 				"Introduced filter-locking mechanism preserving domain-invariant features",
@@ -145,33 +143,42 @@ export default function CV() {
 	];
 
 	return (
-		<div className="max-w-[800px] mx-auto px-6 md:px-12 py-16">
-			<div className="flex justify-between items-baseline mb-8">
-				<h1 className="text-5xl font-light">curriculum vitae</h1>
+		<div className="max-w-[900px] mx-auto px-6 md:px-12 py-16">
+			<div className="flex justify-between items-baseline mb-12">
+				<h1 className="text-5xl font-light text-secondary">curriculum vitae</h1>
 				<a
 					href="content/cv.pdf"
-					className="text-sm text-primary hover:text-primary-hover">
+					className="text-sm text-primary hover:text-primary-hover font-medium">
 					Download PDF →
 				</a>
 			</div>
 
 			{/* Education */}
-			<section className="mb-12">
-				<h2 className="text-3xl mb-6">education</h2>
-				<hr className="mb-6" />
+			<section className="mb-14">
+				<h2 className="text-3xl mb-6 text-primary">Education</h2>
+				<hr className="mb-8 border-gray-300" />
 
-				<div className="space-y-6">
+				<div className="space-y-8">
 					{education.map((edu, idx) => (
-						<div key={idx} className="flex gap-6 items-baseline">
-							<div className="flex-shrink-0 w-32 text-sm text-text-muted font-sans text-right">
+						<div key={idx} className="flex gap-8">
+							<div className="flex-shrink-0 w-40 text-sm text-text-muted font-sans text-right pt-1">
 								{edu.year}
 							</div>
 							<div className="flex-1">
-								<h3 className="text-lg font-sans font-medium mb-1">
+								<h3 className="text-lg font-sans font-semibold mb-2 text-foreground">
 									{edu.degree}
 								</h3>
-								<p className="text-text-secondary mb-1">{edu.institution}</p>
-								<p className="text-sm text-text-muted">{edu.details}</p>
+								<p className="text-text-secondary mb-2 font-medium">
+									{edu.institution}
+								</p>
+								{edu.advisor && (
+									<p className="text-sm text-primary mb-2 italic">
+										Advisor: {edu.advisor}
+									</p>
+								)}
+								<p className="text-sm text-text-muted leading-relaxed">
+									{edu.details}
+								</p>
 							</div>
 						</div>
 					))}
@@ -179,42 +186,44 @@ export default function CV() {
 			</section>
 
 			{/* Publications */}
-			<section className="mb-12" id="papers">
-				<h2 className="text-3xl mb-6">publications</h2>
-				<hr className="mb-6" />
+			<section className="mb-14" id="papers">
+				<h2 className="text-3xl mb-6 text-primary">Publications</h2>
+				<hr className="mb-8 border-gray-300" />
 
 				{publications.map((yearGroup) => (
-					<div key={yearGroup.year} className="mb-8">
-						<h3 className="text-xl font-sans font-medium text-primary mb-4">
+					<div key={yearGroup.year} className="mb-10">
+						<h3 className="text-xl font-sans font-semibold text-primary mb-6">
 							{yearGroup.year}
 						</h3>
 
-						<div className="space-y-6">
+						<div className="space-y-8">
 							{yearGroup.items.map((pub, idx) => (
-								<article key={idx} className="pl-6 border-l-2 border-gray-200">
-									<h4 className="text-lg font-sans mb-2">
+								<article
+									key={idx}
+									className="pl-6 border-l-2 border-primary/30">
+									<h4 className="text-lg font-sans font-medium mb-3">
 										<a
 											href={pub.links.pdf}
-											className="text-primary hover:text-primary-hover">
+											className="text-primary hover:text-primary-hover hover:underline">
 											{pub.title}
 										</a>
 									</h4>
-									<p className="text-sm text-text-secondary mb-1">
+									<p className="text-sm text-text-secondary mb-2 leading-relaxed">
 										{pub.authors}
 									</p>
-									<p className="text-sm text-text-muted mb-2">
+									<p className="text-sm text-text-muted mb-3">
 										<em>{pub.venue}</em>
 									</p>
 									{pub.award && (
-										<p className="text-sm font-medium text-primary mb-2">
+										<p className="text-sm font-medium text-primary mb-3">
 											🏆 {pub.award}
 										</p>
 									)}
-									<div className="flex gap-2">
+									<div className="flex gap-3">
 										<a
 											href={pub.links.pdf}
-											className="text-xs text-primary hover:underline">
-											arXiv
+											className="text-xs text-primary hover:underline font-medium">
+											arXiv →
 										</a>
 									</div>
 								</article>
@@ -225,25 +234,30 @@ export default function CV() {
 			</section>
 
 			{/* Research Experience */}
-			<section className="mb-12">
-				<h2 className="text-3xl mb-6">research experience</h2>
-				<hr className="mb-6" />
+			<section className="mb-14">
+				<h2 className="text-3xl mb-6 text-primary">Research Experience</h2>
+				<hr className="mb-8 border-gray-300" />
 
-				<div className="space-y-6">
+				<div className="space-y-8">
 					{experience.map((exp, idx) => (
-						<div key={idx} className="flex gap-6 items-baseline">
-							<div className="flex-shrink-0 w-32 text-sm text-text-muted font-sans text-right">
+						<div key={idx} className="flex gap-8">
+							<div className="flex-shrink-0 w-40 text-sm text-text-muted font-sans text-right pt-1">
 								{exp.year}
 							</div>
 							<div className="flex-1">
-								<h3 className="text-lg font-sans font-medium mb-1">
+								<h3 className="text-lg font-sans font-semibold mb-2 text-foreground">
 									{exp.title}
 								</h3>
-								<p className="text-text-secondary mb-2">
+								<p className="text-text-secondary mb-2 font-medium">
 									{exp.organization}
 									{exp.location && ` · ${exp.location}`}
 								</p>
-								<ul className="list-disc list-inside space-y-1 text-sm text-text-secondary">
+								{exp.supervisor && (
+									<p className="text-sm text-primary mb-3 italic">
+										{exp.supervisor}
+									</p>
+								)}
+								<ul className="list-disc list-outside ml-5 space-y-2 text-sm text-text-secondary leading-relaxed">
 									{exp.details.map((detail, i) => (
 										<li key={i}>{detail}</li>
 									))}
@@ -255,21 +269,21 @@ export default function CV() {
 			</section>
 
 			{/* Selected Projects */}
-			<section className="mb-12">
-				<h2 className="text-3xl mb-6">selected projects</h2>
-				<hr className="mb-6" />
+			<section className="mb-14">
+				<h2 className="text-3xl mb-6 text-primary">Selected Projects</h2>
+				<hr className="mb-8 border-gray-300" />
 
-				<div className="space-y-6">
+				<div className="space-y-8">
 					{projects.map((project, idx) => (
-						<div key={idx} className="flex gap-6 items-baseline">
-							<div className="flex-shrink-0 w-32 text-sm text-text-muted font-sans text-right">
+						<div key={idx} className="flex gap-8">
+							<div className="flex-shrink-0 w-40 text-sm text-text-muted font-sans text-right pt-1">
 								{project.year}
 							</div>
 							<div className="flex-1">
-								<h3 className="text-lg font-sans font-medium mb-2">
+								<h3 className="text-lg font-sans font-semibold mb-3 text-foreground">
 									{project.title}
 								</h3>
-								<ul className="list-disc list-inside space-y-1 text-sm text-text-secondary">
+								<ul className="list-disc list-outside ml-5 space-y-2 text-sm text-text-secondary leading-relaxed">
 									{project.details.map((detail, i) => (
 										<li key={i}>{detail}</li>
 									))}
@@ -281,50 +295,50 @@ export default function CV() {
 			</section>
 
 			{/* Teaching Experience */}
-			<section className="mb-12">
-				<h2 className="text-3xl mb-6">teaching experience</h2>
-				<hr className="mb-6" />
+			<section className="mb-14">
+				<h2 className="text-3xl mb-6 text-primary">teaching experience</h2>
+				<hr className="mb-8 border-gray-300" />
 
-				<div className="space-y-3">
+				<div className="space-y-4">
 					{teaching.map((item, idx) => (
-						<div key={idx} className="flex gap-6 items-baseline">
-							<div className="flex-shrink-0 w-32 text-sm text-text-muted font-sans text-right">
+						<div key={idx} className="">
+							<span className="text-sm font-semibold text-text-muted uppercase tracking-wide">
 								{item.role}
-							</div>
-							<div className="flex-1 text-base">{item.venue}</div>
+							</span>
+							<p className="text-base text-foreground mt-1">{item.venue}</p>
 						</div>
 					))}
 				</div>
 			</section>
 
 			{/* Skills */}
-			<section className="mb-12">
-				<h2 className="text-3xl mb-6">technical skills</h2>
-				<hr className="mb-6" />
+			<section className="mb-14">
+				<h2 className="text-3xl mb-6 text-primary">technical skills</h2>
+				<hr className="mb-8 border-gray-300" />
 
-				<div className="space-y-3">
-					<div>
-						<span className="text-sm font-medium text-text-muted font-sans mr-3">
-							Languages:
+				<div className="space-y-5">
+					<div className="flex gap-4">
+						<span className="text-sm font-semibold text-text-muted font-sans uppercase tracking-wide w-32 flex-shrink-0">
+							Languages
 						</span>
-						<span className="text-base">
+						<span className="text-base text-foreground leading-relaxed flex-1">
 							Python, Haskell, Go, C/C++, JavaScript, C#
 						</span>
 					</div>
-					<div>
-						<span className="text-sm font-medium text-text-muted font-sans mr-3">
-							Frameworks:
+					<div className="flex gap-4">
+						<span className="text-sm font-semibold text-text-muted font-sans uppercase tracking-wide w-32 flex-shrink-0">
+							Frameworks
 						</span>
-						<span className="text-base">
+						<span className="text-base text-foreground leading-relaxed flex-1">
 							React, Node.js, WordPress, PyTorch, Hugging Face (Transformers,
 							Diffusers, timm, unsloth)
 						</span>
 					</div>
-					<div>
-						<span className="text-sm font-medium text-text-muted font-sans mr-3">
-							Tools:
+					<div className="flex gap-4">
+						<span className="text-sm font-semibold text-text-muted font-sans uppercase tracking-wide w-32 flex-shrink-0">
+							Tools
 						</span>
-						<span className="text-base">
+						<span className="text-base text-foreground leading-relaxed flex-1">
 							Git, Docker, VS Code, LLVM, LangChain
 						</span>
 					</div>

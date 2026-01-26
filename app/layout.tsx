@@ -7,14 +7,12 @@ import QuoteSidebar from "@/components/QuoteSidebar";
 
 export const metadata: Metadata = {
 	title: "M Saram Hassan",
-	description:
-		"Personal academic portfolio showcasing research, publications, and projects",
-	authors: [{ name: "Your Name" }],
+	description: "Personal portfolio & blogsite",
+	authors: [{ name: "M. Saram Hassan" }],
 	keywords: ["research", "academia", "portfolio", "publications"],
 	openGraph: {
 		title: "M Saram Hassan",
-		description:
-			"Personal academic portfolio showcasing research, publications, and projects",
+		description: "Personal portfolio & blogsite",
 		type: "website",
 	},
 };
