@@ -151,7 +151,7 @@ export default function Home() {
 				<section className="mt-16">
 					<h2 className="text-2xl font-normal text-foreground mb-2.5">news</h2>
 					<Link
-						href="/news"
+						href=""
 						className="text-text-muted text-sm no-underline hover:text-primary">
 						[See all news]
 					</Link>
