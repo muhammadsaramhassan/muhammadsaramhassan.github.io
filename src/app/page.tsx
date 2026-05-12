@@ -67,7 +67,14 @@ export default function Home() {
 						<ol>
 							<li>
 								<a href="#about">
-									The author, <em>briefly</em>
+									The author,{" "}
+									<em
+										style={{
+											color: "#7A1F2B",
+											fontStyle: "italic",
+										}}>
+										briefly
+									</em>
 								</a>
 								<span className="pg">p. 01</span>
 							</li>
@@ -76,15 +83,7 @@ export default function Home() {
 								<span className="pg">p. 03</span>
 							</li>
 							<li>
-								<a href="#skills">
-									Technical <em>repertoire</em>
-								</a>
-								<span className="pg">p. 06</span>
-							</li>
-							<li>
-								<Link href="/writing">
-									Notes from the <em>workbench</em>
-								</Link>
+								<Link href="/writing">Notes from the workbench</Link>
 								<span className="pg">p. 09</span>
 							</li>
 							<li>
@@ -92,15 +91,11 @@ export default function Home() {
 								<span className="pg">p. 14</span>
 							</li>
 							<li>
-								<a href="#readings">
-									Readings &amp; <em>marginalia</em>
-								</a>
+								<a href="#readings">Readings &amp; marginalia</a>
 								<span className="pg">p. 18</span>
 							</li>
 							<li>
-								<a href="#contact">
-									Commission &amp; <em>correspondence</em>
-								</a>
+								<a href="#contact">Commission &amp; correspondence</a>
 								<span className="pg">p. 22</span>
 							</li>
 						</ol>
@@ -170,36 +165,68 @@ export default function Home() {
 					</div>
 					<div className="hero-index">
 						<div>
-							<span className="k">studying</span>
+							<span className="k">research focus</span>
 							<span className="v">
-								BSc, Computer Science
-								<span className="sub">LUMS · Class of &apos;26 </span>
+								Model Understanding &amp; Agentic Systems
 							</span>
 						</div>
 						<div>
-							<span className="k">advised by</span>
+							<span className="k">advisors</span>
 							<span className="v">
-								<em>M. F. Zaffar</em> et al.
+								<a
+									href="https://faculty.lums.edu.pk/faculty/zaffar-maf"
+									target="_blank"
+									rel="noopener noreferrer"
+									style={{ fontWeight: "bold" }}>
+									M. F. Zaffar
+								</a>
 								<span className="sub">
-									A. Gehani (SRI) · R. Kaur (SRI) · T. Khan (CMU) · Y. Zaki
-									(NYUAD)
+									<a
+										href="https://www.sri.com/bios/ashish-gehani/"
+										target="_blank"
+										rel="noopener noreferrer">
+										A. Gehani (SRI)
+									</a>{" "}
+									·{" "}
+									<a
+										href="https://www.sri.com/bios/reet-kaur/"
+										target="_blank"
+										rel="noopener noreferrer">
+										R. Kaur (SRI)
+									</a>{" "}
+									·{" "}
+									<a
+										href="https://www.cs.cmu.edu/~tahakhan/"
+										target="_blank"
+										rel="noopener noreferrer">
+										T. Khan (CMU)
+									</a>{" "}
+									·{" "}
+									<a
+										href="https://nyuad.nyu.edu/en/academics/divisions/science/faculty/yasir-zaki.html"
+										target="_blank"
+										rel="noopener noreferrer">
+										Y. Zaki (NYUAD)
+									</a>
 								</span>
 							</span>
 						</div>
 						<div>
 							<span className="k">latest</span>
 							<span className="v">
-								<span className="gold">EMNLP Findings</span>
-								<span className="sub">
-									Accepted · Nov 2025 · 17.35% acceptance
-								</span>
+								<Link href="/writing/ai-safety-systems-engineer">
+									<span className="gold">EMNLP Findings</span>
+									<span className="sub">
+										Accepted · Nov 2025 · 17.35% acceptance
+									</span>
+								</Link>
 							</span>
 						</div>
 						<div>
-							<span className="k">building &amp; analysing</span>
+							<span className="k">skills</span>
 							<span className="v">
-								<span className="gold">Agentic Systems</span>
-								<span className="sub">through a security lens</span>
+								PyTorch, Hugging Face, LangChain
+								<span className="sub">Python, Haskell, Go, C/C++</span>
 							</span>
 						</div>
 					</div>
@@ -281,7 +308,7 @@ export default function Home() {
 					/>
 					<p className="writing-blurb">
 						Short essays on interpretability, ML systems, and the scaffolding
-						around them. Written slowly, revised often. Posted here first — then
+						around them. Written slowly, revised often. Posted here first - then
 						occasionally on LinkedIn.
 					</p>
 					{recentPosts.length > 0 ? (
@@ -443,10 +470,7 @@ export default function Home() {
 									<span className="b-year">2016</span>
 								</li>
 							</ol>
-							<p className="readings-note">
-								A living document — updated as things shift my thinking or bring
-								me joy.
-							</p>
+							<p className="readings-note"></p>
 						</div>
 					</div>
 				</section>
@@ -457,13 +481,11 @@ export default function Home() {
 				<div className="container">
 					<div className="c-eye">§ VI · Write to me</div>
 					<h3>
-						Got something <em>worth saying?</em> Say it.
+						Got something <em>to say?</em> Send a Hi.
 					</h3>
 					<p>
-						I like emails that get to the point — a paper you think I&apos;d
-						disagree with, a project that seems half-mad, a question about
-						mountains or telescopes or origami. I respond to most things within
-						48 hours and to interesting things faster.
+						I would love to hear fresh perspectives and new ideas. Ill do my
+						best to to jump back in within 48 hours.
 					</p>
 					<div className="cta-row">
 						<a href="mailto:saram.hassan1412@gmail.com" className="cta-gold">
@@ -530,7 +552,6 @@ export default function Home() {
 					if any of this was useful, wrong, or worth pushing on.
 				</h2>
 				<p className="sign">
-					Set by hand in Lahore, Spring 2026 ·{" "}
 					<span className="who">M. S. H.</span>
 				</p>
 			</section>
