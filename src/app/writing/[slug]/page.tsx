@@ -17,9 +17,10 @@ export async function generateStaticParams(): Promise<Params[]> {
 export async function generateMetadata({
   params,
 }: {
-  params: Params
+  params: Promise<Params>
 }): Promise<Metadata> {
-  const post = getPost(params.slug)
+  const { slug } = await params
+  const post = getPost(slug)
   if (!post) return {}
   return {
     title: post.title,
@@ -48,8 +49,9 @@ function ReadDots({ minutes }: { minutes: number }) {
   )
 }
 
-export default function PostPage({ params }: { params: Params }) {
-  const post = getPost(params.slug)
+export default async function PostPage({ params }: { params: Promise<Params> }) {
+  const { slug } = await params
+  const post = getPost(slug)
   if (!post) notFound()
 
   return (
