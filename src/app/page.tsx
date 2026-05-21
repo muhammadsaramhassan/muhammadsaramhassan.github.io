@@ -278,10 +278,7 @@ export default function Home() {
 						<li>
 							<div>
 								<h3>
-									<a href="#">
-										Understanding or Imitation? Auditing Conceptual
-										Understanding and Reasoning in Large Language Models
-									</a>
+									<a href="#">Auditing Understanding and Reasoning in LLMs</a>
 								</h3>
 								<p className="auth">
 									<span className="me">M. S. Hassan</span>, et al. · SRI
