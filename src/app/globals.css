@@ -181,7 +181,7 @@ a:hover {
 		font-size: 13px;
 	}
 	/* hide less critical links on small screens */
-	.mast-nav a[href="/#contact"],
+	.mast-nav a[href="/contact"],
 	.mast-nav a[href*="cv"] {
 		display: none;
 	}
@@ -1090,7 +1090,6 @@ h1.display .middle::after {
 	color: var(--gold);
 	border-color: var(--gold);
 }
-
 
 /* BIB (papers) */
 .bib {

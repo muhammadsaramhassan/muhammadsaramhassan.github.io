@@ -26,9 +26,7 @@ export default function Home() {
 					<div>
 						<div className="cover-status">
 							<span className="cs-dot" />
-							<span className="cs-label">
-								For the love of everything sciency
-							</span>
+							<span className="cs-label">Figuring out bits.</span>
 							<span className="cs-sep">—</span>
 							<span className="cs-text">
 								<em>Lahore, 2026</em>
@@ -55,7 +53,7 @@ export default function Home() {
 						<p className="cover-strap">
 							Selected papers, projects, and notes from a computer scientist
 							working at the intersection of Agentic Systems, Interpretability,
-							and AI Safety. Updated when the work warrants.
+							and AI Safety.
 							<br />
 							<br />
 							At heart: an amateur astronomer with a soft spot for dark skies
@@ -83,7 +81,7 @@ export default function Home() {
 								<span className="pg">p. 03</span>
 							</li>
 							<li>
-								<Link href="/writing">Notes from the workbench</Link>
+								<Link href="/writing">Writing</Link>
 								<span className="pg">p. 09</span>
 							</li>
 							<li>
@@ -95,7 +93,7 @@ export default function Home() {
 								<span className="pg">p. 18</span>
 							</li>
 							<li>
-								<a href="#contact">Commission &amp; correspondence</a>
+								<Link href="/contact">Contact</Link>
 								<span className="pg">p. 22</span>
 							</li>
 						</ol>
@@ -116,19 +114,14 @@ export default function Home() {
 						</p>
 						<p>
 							I&apos;ve contributed to research published at{" "}
-							<strong>EMNLP Findings</strong>, and collaborated with researchers
-							at <strong>Stanford Research Institute</strong>,{" "}
+							<strong>EMNLP Findings</strong>, <strong>ACM REP</strong> and
+							collaborated with researchers at{" "}
+							<strong>Stanford Research Institute</strong>,{" "}
 							<strong>CMU CyLab</strong>, and <strong>NYUAD</strong>. Beyond the
 							workbench, I have a habit of building things from the ground up;
-							whether that means revamping the astronomy observatory at LUMS or
-							launching rockets a little too confidently into the local
+							whether that means revamping the astronomy observatory here at
+							LUMS or launching rockets a little too confidently into the local
 							airspace.
-						</p>
-						<p>
-							Recently I&apos;ve become interested in origami which seems to me
-							a kind of physical analog to the work I do with models: taking a
-							flat sheet of information and folding it into something
-							structured, surprising, and beautiful.
 						</p>
 					</div>
 					<aside className="portrait">
@@ -278,16 +271,18 @@ export default function Home() {
 						<li>
 							<div>
 								<h3>
-									<a href="#">Auditing Understanding and Reasoning in LLMs</a>
+									<a href="#">
+										Understanding or Imitation? Auditing Conceptual
+										Understanding and Reasoning in Large Language Models
+									</a>
 								</h3>
 								<p className="auth">
-									<span className="me">M. S. Hassan</span>, et al. · SRI
-									International
+									<span className="me">M. S. Hassan</span>, E. Jan, R. Kaur, E.
+									Ye, F. Zaffar, A. Gehani
 								</p>
 								<div className="meta">
 									<span className="venue">
-										Manuscript under Review · ACM Conference on Reproducibility
-										and Replicability
+										★ ACM Conference on Reproducibility and Replicability · 2026
 									</span>
 								</div>
 							</div>
@@ -299,14 +294,13 @@ export default function Home() {
 				<section className="container" id="writing">
 					<SectionHeader
 						num="§ III · Writing"
-						title="Notes from the workbench"
+						title="Writing"
 						moreLabel="full archive →"
 						moreHref="/writing"
 					/>
 					<p className="writing-blurb">
 						Short essays on interpretability, ML systems, and the scaffolding
-						around them. Written slowly, revised often. Posted here first - then
-						occasionally on LinkedIn.
+						around them. Posted here first - occasionally on LinkedIn.
 					</p>
 					{recentPosts.length > 0 ? (
 						<ul className="essays">
@@ -379,17 +373,16 @@ export default function Home() {
 							</h3>
 							<p>
 								I keep a log of astrophotography sessions from the Karakoram and
-								Himalaya, usually paired with reading notes written at 4,000m.
-								It&apos;s where I do my best thinking about life, funnily
-								enough.
+								Himalaya, usually paired with some scribbled notes written at
+								4,000m. Its lots of fun.
 							</p>
 							<ul>
 								<li>
-									Rakaposhi Base Camp (2025) — the Milky Way, properly, for the
+									Rakaposhi Base Camp (2025) - the Milky Way, properly, for the
 									first time
 								</li>
-								<li>Sharan Forest, 2023 — first deep-sky stack</li>
-								<li>Arang Kel, 2022 — first time seeing bortle 1 skies</li>
+								<li>Sharan Forest, 2023 - first deep-sky stack</li>
+								<li>Arang Kel, 2022 - first time seeing bortle 1 skies</li>
 							</ul>
 						</div>
 					</div>
@@ -445,26 +438,26 @@ export default function Home() {
 							<h4 className="readings-col-head">Books worth reading</h4>
 							<ol className="books-list">
 								<li>
+									<span className="b-title">White Nights</span>
+									<span className="b-auth">Fyodor Dostoevsky</span>
+									<span className="b-year">2025</span>
+								</li>
+								<li>
 									<span className="b-title">
 										The Ministry of Utmost Happiness
 									</span>
 									<span className="b-auth">Arundhati Roy</span>
-									<span className="b-year">2017</span>
+									<span className="b-year">2022</span>
 								</li>
 								<li>
-									<span className="b-title">White Nights</span>
-									<span className="b-auth">Fyodor Dostoevsky</span>
-									<span className="b-year">1848</span>
+									<span className="b-title"> A thousand Splendid suns </span>
+									<span className="b-auth">Khaled Hosseini</span>
+									<span className="b-year">2020</span>
 								</li>
 								<li>
 									<span className="b-title">The Forty Rules of Love</span>
 									<span className="b-auth">Elif Shafak</span>
-									<span className="b-year">2009</span>
-								</li>
-								<li>
-									<span className="b-title">Weapons of Math Destruction</span>
-									<span className="b-auth">Cathy O&apos;Neil</span>
-									<span className="b-year">2016</span>
+									<span className="b-year">2019</span>
 								</li>
 							</ol>
 							<p className="readings-note"></p>
@@ -473,70 +466,7 @@ export default function Home() {
 				</section>
 			</main>
 
-			{/* ═══ CONTACT (full-bleed) ═══ */}
-			<section className="commission-bleed" id="contact">
-				<div className="container">
-					<div className="c-eye">§ VI · Write to me</div>
-					<h3>
-						Got something <em>to say?</em> Send a Hi.
-					</h3>
-					<p>
-						I would love to hear fresh perspectives and new ideas. Ill do my
-						best to to jump back in within 48 hours.
-					</p>
-					<div className="cta-row">
-						<a href="mailto:saram.hassan1412@gmail.com" className="cta-gold">
-							write to me <span>→</span>
-						</a>
-						<a
-							href="/Muhammad_Saram_Hassan_s_Resume.pdf"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="cta-ghost-light">
-							download cv.pdf
-						</a>
-					</div>
-					<div className="commission-meta-row">
-						<div>
-							<div className="k">email</div>
-							<div className="v">
-								<a href="mailto:saram.hassan1412@gmail.com">
-									saram.hassan1412 [at] gmail
-								</a>
-							</div>
-						</div>
-						<div>
-							<div className="k">elsewhere</div>
-							<div className="v">
-								<a
-									href="https://github.com/msaramhassan"
-									target="_blank"
-									rel="noopener noreferrer">
-									github
-								</a>{" "}
-								·{" "}
-								<a
-									href="https://linkedin.com/in/msaramhassan"
-									target="_blank"
-									rel="noopener noreferrer">
-									linkedin
-								</a>{" "}
-								·{" "}
-								<a
-									href="https://scholar.google.com/scholar?q=Muhammad+Saram+Hassan"
-									target="_blank"
-									rel="noopener noreferrer">
-									scholar
-								</a>
-							</div>
-						</div>
-						<div>
-							<div className="k">response time</div>
-							<div className="v">within 48h · UTC+5</div>
-						</div>
-					</div>
-				</div>
-			</section>
+			{/* Contact moved to /contact */}
 
 			{/* ═══ END PLATE ═══ */}
 			<section className="end-plate">

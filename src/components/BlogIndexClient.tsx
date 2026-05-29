@@ -83,12 +83,9 @@ export default function BlogIndexClient({
 						{featured && !activeTag && (
 							<article className="feat">
 								<div className="feat-img" aria-hidden="true">
-									<span className="mark-no">
-										FEATURED · Nº {String(totalCount).padStart(2, "0")}
-									</span>
 									<span className="mark">φ</span>
 									<span className="mark-label">
-										ESSAY · {featured.displayDate.split(" ")[0]} MMXXVI
+										ESSAY · {featured.displayDate.split(" ")[0]} {featured.year}
 									</span>
 								</div>
 								<div className="feat-body">
@@ -161,8 +158,8 @@ export default function BlogIndexClient({
 							<h4>About this page</h4>
 							<p>
 								A slow writing blog, updated <em>roughly monthly</em>. Pieces
-								are re-edited often; if a post feels different on your second
-								read, that&apos;s probably why.
+								are re-edited sometimes; if a post feels different on your
+								second read, that&apos;s probably why.
 							</p>
 							<p
 								style={{

@@ -32,41 +32,18 @@ export default function WritingPage() {
 						<div className="vol-kicker">
 							<Link href="/">← back to portfolio</Link>
 							<span className="sep">·</span>
-							<span>Section § III · Notes from my workbench</span>
+							<span>Section § III · Writing</span>
 							<span className="sep">·</span>
 							<span>2024—2026</span>
 						</div>
 						<h1 className="vol-title">
-							Notes from my <em>workbench</em>
+							Writing
 							<span className="dot">.</span>
 						</h1>
 						<p className="vol-sub">
 							Short essays on interpretability, ML systems, and the scaffolding
-							around them. Written slowly, revised often; filed here without
-							much of a plan.
+							around them.
 						</p>
-						<dl className="vol-stats">
-							<div>
-								<dt>Total pieces</dt>
-								<dd>
-									<em>{posts.length}</em>
-								</dd>
-							</div>
-							<div>
-								<dt>This year</dt>
-								<dd>
-									<span className="gold">{thisYearCount}</span>
-								</dd>
-							</div>
-							<div>
-								<dt>Avg. length</dt>
-								<dd>{avgWords.toLocaleString()}w</dd>
-							</div>
-							<div>
-								<dt>Reply rate</dt>
-								<dd>48h</dd>
-							</div>
-						</dl>
 					</div>
 				</section>
 
