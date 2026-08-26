@@ -1,492 +1,203 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import Masthead from "@/components/Masthead";
-import FooterColophon from "@/components/FooterColophon";
-import SectionHeader from "@/components/SectionHeader";
-import Starmap from "@/components/Starmap";
-import TweaksPanel from "@/components/TweaksPanel";
-import { getAllPosts } from "@/lib/posts";
+import SiteFooter from "@/components/SiteFooter";
+import { og, publications, inProgress, site } from "@/lib/site";
 
-export const metadata = {
-	title: "Muhammad Saram Hassan",
+export const metadata: Metadata = {
 	description:
-		"Muhammad Saram Hassan is a computer scientist at LUMS working on agentic systems, mechanistic interpretability, and AI safety.",
+		"Muhammad Saram Hassan is a computer scientist from LUMS working on the security of autonomous LLM agents. Published at ACM REP 2026 and Findings of EMNLP 2025.",
+	alternates: { canonical: "/" },
+	openGraph: og({
+		title: site.name,
+		description:
+			"Security of autonomous LLM agents. SRI International, CMU CyLab, LUMS.",
+	}),
 };
 
-export default function Home() {
-	const recentPosts = getAllPosts().slice(0, 3);
+const X = (props: { href: string; children: React.ReactNode }) => (
+	<a href={props.href} target="_blank" rel="noopener noreferrer">
+		{props.children}
+	</a>
+);
 
+/** Dated updates, newest first. Keep to roughly the last two years. */
+const news: { when: string; body: React.ReactNode }[] = [
+	{
+		when: "Jun 2026",
+		body: (
+			<>
+				I presented my{" "}
+				<X href="https://www.csl.sri.com/users/gehani/papers/REP-2026.Potemkin.pdf">
+					paper
+				</X>{" "}
+				on whether a widely cited benchmark for conceptual understanding in LLMs
+				actually reproduces at{" "}
+				<X href="https://acm-rep.github.io/2026/">ACM REP 2026</X> in Delft.
+			</>
+		),
+	},
+	{
+		when: "May 2026",
+		body: <>Graduated from LUMS with a BS in Computer Science.</>,
+	},
+	{
+		when: "Nov 2025",
+		body: (
+			<>
+				My{" "}
+				<X href="https://aclanthology.org/2025.findings-emnlp.589/">paper</X> on
+				whether knowledge injected during fine-tuning is genuinely usable or
+				only recitable appeared at{" "}
+				<X href="https://2025.emnlp.org/">Findings of EMNLP 2025</X> in Miami.
+			</>
+		),
+	},
+	{
+		when: "Aug 2025",
+		body: (
+			<>
+				Started working with mentors at
+				SRI International measuring models understanding of the concepts
+				they can correctly define.
+			</>
+		),
+	},	
+	{
+		when: "Jan 2025",
+		body: (
+			<>
+				Joined the Security &amp; Privacy Lab at LUMS researching prompt injection attacks
+				 against autonomous web agents and techniques for identifying agent-generated traffic in the wild.
+			</>
+		),
+	},
+];
+
+export default function Home() {
 	return (
 		<>
-			<Masthead />
-
-			{/* ═══ COVER ═══ */}
-			<section className="cover">
-				<div className="cover-inner">
-					<div>
-						<div className="cover-status">
-							<span className="cs-dot" />
-							<span className="cs-label">Figuring out bits.</span>
-							<span className="cs-sep">—</span>
-							<span className="cs-text">
-								<em>Lahore, 2026</em>
-							</span>
-						</div>
-						<div className="cover-folio">
-							<span className="gr" /> Computer Scientist <span className="gr" />{" "}
-							LUMS · Class of &apos;26
-						</div>
-						<h1 className="cover-title">
-							M.{" "}
-							<span
-								className="me"
-								style={{
-									color: "#7A1F2B",
-									textDecoration: "underline",
-									textDecorationThickness: "5px",
-								}}>
-								Saram
-							</span>
-							<br />
-							Hassan
-						</h1>
-						<p className="cover-strap">
-							Selected papers, projects, and notes from a computer scientist
-							working at the intersection of Agentic Systems, Interpretability,
-							and AI Safety.
-							<br />
-							<br />
-							At heart: an amateur astronomer with a soft spot for dark skies
-							and high altitudes.
-						</p>
-					</div>
-					<div className="cover-toc">
-						<div className="cover-toc-head">— in this volume —</div>
-						<ol>
-							<li>
-								<a href="#about">
-									The author,{" "}
-									<em
-										style={{
-											color: "#7A1F2B",
-											fontStyle: "italic",
-										}}>
-										briefly
-									</em>
-								</a>
-								<span className="pg">p. 01</span>
-							</li>
-							<li>
-								<a href="#research">Papers &amp; Preprints</a>
-								<span className="pg">p. 03</span>
-							</li>
-							<li>
-								<Link href="/writing">Writing</Link>
-								<span className="pg">p. 09</span>
-							</li>
-							<li>
-								<a href="#mountains">Mountains &amp; telescopes</a>
-								<span className="pg">p. 14</span>
-							</li>
-							<li>
-								<a href="#readings">Readings &amp; marginalia</a>
-								<span className="pg">p. 18</span>
-							</li>
-							<li>
-								<Link href="/contact">Contact</Link>
-								<span className="pg">p. 22</span>
-							</li>
-						</ol>
-					</div>
-				</div>
-			</section>
-
-			<main>
-				{/* ═══ INTRO ═══ */}
-				<section className="intro container" id="about">
-					<div className="intro-body">
-						<p>
-							Hi. I&apos;m a final-year computer science student at LUMS
-							fascinated by the mechanics of AI behavior. My research sits at
-							the intersection of agentic systems and model understanding, where
-							I develop frameworks to measure how autonomous agents scale,
-							reason, and stay robust in unscripted settings.
-						</p>
-						<p>
-							I&apos;ve contributed to research published at{" "}
-							<strong>EMNLP Findings</strong>, <strong>ACM REP</strong> and
-							collaborated with researchers at{" "}
-							<strong>Stanford Research Institute</strong>,{" "}
-							<strong>CMU CyLab</strong>, and <strong>NYUAD</strong>. Beyond the
-							workbench, I have a habit of building things from the ground up;
-							whether that means revamping the astronomy observatory here at
-							LUMS or launching rockets a little too confidently into the local
-							airspace.
-						</p>
-					</div>
-					<aside className="portrait">
-						<figure className="portrait-fig">
-							<div
-								className="portrait-img"
-								role="img"
-								aria-label="Portrait of M. Saram Hassan">
-								<Image
-									src="/profile.png"
-									alt="Portrait of M. Saram Hassan"
-									fill
-									className="portrait-photo"
-									priority
-								/>
-								<div className="portrait-noise" />
-							</div>
-							<figcaption>
-								<span className="p-folio">Plate I.</span>
-								<span className="p-title">
-									Me,{"  \n"}
-									<em>seconds before the wand backfired.</em>
-								</span>
-								<span className="p-credit">Lahore, Spring 2023</span>
-							</figcaption>
-						</figure>
-					</aside>
-				</section>
-
-				{/* ═══ HERO (at-a-glance) ═══ */}
-				<section className="hero container">
-					<div className="hero-caption">
-						— the ledger — <span>at a glance</span>
-					</div>
-					<div className="hero-index">
-						<div>
-							<span className="k">research focus</span>
-							<span className="v">
-								Model Understanding &amp; Agentic Systems
-							</span>
-						</div>
-						<div>
-							<span className="k">advisors</span>
-							<span className="v">
-								<a
-									href="https://faculty.lums.edu.pk/faculty/zaffar-maf"
-									target="_blank"
-									rel="noopener noreferrer"
-									style={{ fontWeight: "bold" }}>
-									M. F. Zaffar
-								</a>
-								<span className="sub">
-									<a
-										href="https://www.sri.com/bios/ashish-gehani/"
-										target="_blank"
-										rel="noopener noreferrer">
-										A. Gehani (SRI)
-									</a>{" "}
-									·{" "}
-									<a
-										href="https://www.sri.com/bios/reet-kaur/"
-										target="_blank"
-										rel="noopener noreferrer">
-										R. Kaur (SRI)
-									</a>{" "}
-									·{" "}
-									<a
-										href="https://www.cs.cmu.edu/~tahakhan/"
-										target="_blank"
-										rel="noopener noreferrer">
-										T. Khan (CMU)
-									</a>{" "}
-									·{" "}
-									<a
-										href="https://nyuad.nyu.edu/en/academics/divisions/science/faculty/yasir-zaki.html"
-										target="_blank"
-										rel="noopener noreferrer">
-										Y. Zaki (NYUAD)
-									</a>
-								</span>
-							</span>
-						</div>
-						<div>
-							<span className="k">latest</span>
-							<span className="v">
-								<Link href="/writing/ai-safety-systems-engineer">
-									<span className="gold">EMNLP Findings</span>
-									<span className="sub">
-										Accepted · Nov 2025 · 17.35% acceptance
-									</span>
-								</Link>
-							</span>
-						</div>
-						<div>
-							<span className="k">skills</span>
-							<span className="v">
-								PyTorch, Hugging Face, LangChain
-								<span className="sub">Python, Haskell, Go, C/C++</span>
-							</span>
-						</div>
-					</div>
-				</section>
-
-				{/* ═══ RESEARCH ═══ */}
-				<section id="research" className="container">
-					<SectionHeader
-						num="§ I · Research"
-						title="Papers &amp; Preprints"
-						moreHref="#"
+			<main className="op">
+				<header className="op-head">
+					<Image
+						className="op-photo"
+						src="/profile.png"
+						alt="Muhammad Saram Hassan"
+						width={400}
+						height={400}
+						priority
 					/>
-					<ol className="bib">
-						<li>
-							<div>
-								<h3>
-									<a href="https://aclanthology.org/2025.findings-emnlp.589/">
-										Data Doping or True Intelligence? Evaluating the
-										Transferability of Injected Knowledge in LLMs
-									</a>
-								</h3>
-								<p className="auth">
-									E. Jan, M. Ali, <span className="me">M. S. Hassan</span>, Y.
-									Zaki, M. F. Zaffar
-								</p>
-								<div className="meta">
-									<span className="venue">★ EMNLP Findings · 2025</span>
-									<a
-										href="https://aclanthology.org/2025.findings-emnlp.589.pdf"
-										target="_blank"
-										rel="noopener noreferrer">
-										pdf
-									</a>
-									<a
-										href="https://aclanthology.org/2025.findings-emnlp.589/"
-										target="_blank"
-										rel="noopener noreferrer">
-										acl anthology
-									</a>
-									<a
-										href="https://arxiv.org/abs/2505.17140"
-										target="_blank"
-										rel="noopener noreferrer">
-										arXiv
-									</a>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div>
-								<h3>
-									<a href="#">
-										Understanding or Imitation? Auditing Conceptual
-										Understanding and Reasoning in Large Language Models
-									</a>
-								</h3>
-								<p className="auth">
-									<span className="me">M. S. Hassan</span>, E. Jan, R. Kaur, E.
-									Ye, F. Zaffar, A. Gehani
-								</p>
-								<div className="meta">
-									<span className="venue">
-										★ ACM Conference on Reproducibility and Replicability · 2026
-									</span>
-								</div>
-							</div>
-						</li>
-					</ol>
-				</section>
-
-				{/* ═══ WRITING PREVIEW ═══ */}
-				<section className="container" id="writing">
-					<SectionHeader
-						num="§ III · Writing"
-						title="Writing"
-						moreLabel="full archive →"
-						moreHref="/writing"
-					/>
-					<p className="writing-blurb">
-						Short essays on interpretability, ML systems, and the scaffolding
-						around them. Posted here first - occasionally on LinkedIn.
+					<h1 className="op-name">Muhammad Saram Hassan</h1>
+					<p className="op-role">
+						Research Assistant, Security &amp; Privacy Lab
+						<br />
+						LUMS &middot; Lahore, Pakistan
 					</p>
-					{recentPosts.length > 0 ? (
-						<ul className="essays">
-							{recentPosts.map((post) => (
-								<li key={post.slug}>
-									<span className="e-date">
-										{post.displayDate} · {post.year}
-									</span>
-									<span className="e-title">
-										<Link href={`/writing/${post.slug}`}>{post.title}</Link>
-									</span>
-									{post.dek && <span className="e-dek">{post.dek}</span>}
-									<span className="e-read">
-										<span className="dots">
-											{Array.from({ length: 5 }, (_, i) => (
-												<span
-													key={i}
-													className={
-														i < Math.min(Math.ceil(post.readTime / 3), 5)
-															? "on"
-															: ""
-													}
-												/>
-											))}
-										</span>
-										{post.readTime} min
-									</span>
-								</li>
-							))}
-						</ul>
-					) : (
-						<p className="writing-empty">
-							Posts incoming — check back soon, or subscribe via RSS.
-						</p>
-					)}
-					<div className="writing-ctas">
-						<Link href="/writing" className="btn btn-primary">
-							Read all writing <span className="arrow">→</span>
-						</Link>
-						<a href="#readings" className="btn btn-ghost">
-							Recommended reads
-						</a>
-					</div>
-				</section>
+					<p className="op-links">
+						<a href={`mailto:${site.email}`}>Email</a>
+						<i>·</i>
+						<X href={site.social.scholar}>Google Scholar</X>
+						<i>·</i>
+						<X href={site.social.github}>GitHub</X>
+						<i>·</i>
+						<X href={site.social.linkedin}>LinkedIn</X>
+						<i>·</i>
+						<X href={site.cvPdf}>CV</X>
+					</p>
+				</header>
 
-				{/* ═══ KBD STRIP ═══ */}
-				<div className="container">
-					<div className="kbd-strip">
-						<span className="hint">this page listens:</span>
-						<span>
-							<kbd>t</kbd> toggle tweaks
-						</span>
-					</div>
-				</div>
-
-				{/* ═══ STARMAP ═══ */}
-				<section className="container" id="mountains">
-					<SectionHeader
-						num="§ IV · Other lives"
-						title="Mountains &amp; telescopes"
-						moreLabel=""
-						moreHref=""
-					/>
-					<div className="starmap">
-						<Starmap />
-						<div className="starmap-copy">
-							<h3>
-								When the papers are off the desk, I&apos;m probably up a
-								mountain.
-							</h3>
-							<p>
-								I keep a log of astrophotography sessions from the Karakoram and
-								Himalaya, usually paired with some scribbled notes written at
-								4,000m. Its lots of fun.
-							</p>
-							<ul>
-								<li>
-									Rakaposhi Base Camp (2025) - the Milky Way, properly, for the
-									first time
-								</li>
-								<li>Sharan Forest, 2023 - first deep-sky stack</li>
-								<li>Arang Kel, 2022 - first time seeing bortle 1 skies</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-
-				{/* ═══ READINGS ═══ */}
-				<section id="readings" className="container">
-					<SectionHeader
-						num="§ V · Readings &amp; marginalia"
-						title="Things I find inspiring"
-						moreLabel=""
-						moreHref=""
-					/>
-					<div className="readings-grid">
-						<div className="readings-col">
-							<h4 className="readings-col-head">Quotes to live by</h4>
-							<ol className="quotes-list">
-								<li>
-									<blockquote>
-										<p>
-											I found God through the dissolving of my resolves and the
-											breaking of my intentions{" "}
-										</p>
-										<cite>— Imam Ali (AS)</cite>
-									</blockquote>
-								</li>
-								<li>
-									<blockquote>
-										<p>
-											We only truly live by following the imagination of our
-											nine year old self.
-										</p>
-										<cite>
-											— Aradshar Chaddar (2004-2025),{" "}
-											<em> President USA & a Friend</em>
-										</cite>
-									</blockquote>
-								</li>
-								<li>
-									<blockquote>
-										<p>
-											But only in their dreams can men be truly free.
-											&lsquo;Twas always thus, and always thus will be.
-										</p>
-										<cite>
-											— John Keating, <em>Dead Poets Society</em>
-										</cite>
-									</blockquote>
-								</li>
-							</ol>
-						</div>
-						<div className="readings-col">
-							<h4 className="readings-col-head">Books worth reading</h4>
-							<ol className="books-list">
-								<li>
-									<span className="b-title">White Nights</span>
-									<span className="b-auth">Fyodor Dostoevsky</span>
-									<span className="b-year">2025</span>
-								</li>
-								<li>
-									<span className="b-title">
-										The Ministry of Utmost Happiness
-									</span>
-									<span className="b-auth">Arundhati Roy</span>
-									<span className="b-year">2022</span>
-								</li>
-								<li>
-									<span className="b-title"> A thousand Splendid suns </span>
-									<span className="b-auth">Khaled Hosseini</span>
-									<span className="b-year">2020</span>
-								</li>
-								<li>
-									<span className="b-title">The Forty Rules of Love</span>
-									<span className="b-auth">Elif Shafak</span>
-									<span className="b-year">2019</span>
-								</li>
-							</ol>
-							<p className="readings-note"></p>
-						</div>
-					</div>
-				</section>
-			</main>
-
-			{/* Contact moved to /contact */}
-
-			{/* ═══ END PLATE ═══ */}
-			<section className="end-plate">
-				<div className="mark">— fin —</div>
-				<h2>
-					Thanks for reading to the end.{" "}
-					<b>
-						<a href="mailto:saram.hassan1412@gmail.com">Drop me a line</a>
-					</b>{" "}
-					if any of this was useful, wrong, or worth pushing on.
-				</h2>
-				<p className="sign">
-					<span className="who">M. S. H.</span>
+				<p>
+					I am a computer science graduate from{" "}
+					<X href="https://sbasse.lums.edu.pk/department-of-computer-science">
+						LUMS
+					</X>
+					, where I am advised by Professor{" "}
+					<X href="https://dblp.org/pid/59/3605.html">Fareed Zaffar</X>
+					.
 				</p>
-			</section>
 
-			<FooterColophon variant="portfolio" />
+				<p>
+					My research focuses on the security of autonomous LLM agents. I study
+					whether autonomous LLM agents can be trusted, develop methods to detect
+					compromised or malicious agents, and build evaluation frameworks that
+					test whether claims about LLM behavior actually hold up.
+				</p>
 
-			{/* Tweaks panel — client component, keyboard-shortcut aware */}
-			<TweaksPanel />
+				<p>
+					I am currently working with Dr.{" "}
+					<X href="https://www.sri.com/bios/ashish-gehani/">Ashish Gehani</X>
+					, Dr.{" "}
+					<X href="https://ramneetk.github.io/Website/">Ramneet Kaur</X>{" "}
+					and{" "}
+					<X href="https://www.sri.com/people/eric-yeh/">Eric Yeh</X>{" "}
+					at SRI International, and with Professor{" "}
+					<X href="https://nyuad.nyu.edu/en/academics/divisions/science/faculty/yasir-zaki.html">
+						Yasir Zaki
+					</X>{" "}
+					at NYU Abu Dhabi.
+				</p>
+
+				<p className="op-note">I am applying to graduate programs this cycle.</p>
+
+				<h2>News</h2>
+				<dl className="news">
+					{news.map((n) => (
+						<div className="news-row" key={n.when}>
+							<dt>{n.when}</dt>
+							<dd>{n.body}</dd>
+						</div>
+					))}
+				</dl>
+
+				<h2>Publications</h2>
+				<ol className="plist">
+					{publications.map((p) => (
+						<li key={p.title}>
+							<span className="p-title">{p.title}</span>
+							<span className="p-auth">
+								{p.authors.map((a, i) => (
+									<span key={a.name}>
+										{a.me ? <b>{a.name}</b> : a.name}
+										{i < p.authors.length - 1 ? ", " : ""}
+									</span>
+								))}
+							</span>
+							<span className="p-venue">
+								{p.venue}, {p.year}
+							</span>
+							{p.links && (
+								<span className="p-links">
+									{p.links.map((l, i) => (
+										<span key={l.label}>
+											{i > 0 && <i>·</i>}
+											<X href={l.href}>{l.label}</X>
+										</span>
+									))}
+								</span>
+							)}
+						</li>
+					))}
+				</ol>
+
+				<h3 className="plist-sub">In submission and in preparation</h3>
+				<ol className="plist">
+					{inProgress.map((p) => (
+						<li key={p.title}>
+							<span className="p-title">{p.title}</span>
+							<span className="p-venue">{p.status}</span>
+						</li>
+					))}
+				</ol>
+
+				<h2>Elsewhere</h2>
+				<p>
+					Away from the desk I am usually up a mountain with a telescope. There
+					are notes on that, and on the books I keep going back to,{" "}
+					<Link href="/other">here</Link>.
+				</p>
+
+			</main>
+			<SiteFooter />
 		</>
 	);
 }

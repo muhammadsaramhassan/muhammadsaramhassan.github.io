@@ -1,16 +1,25 @@
 # muhammadsaramhassan.github.io
 
-Personal website of Muhammad Saram Hassan — computer scientist at LUMS working on agentic systems, mechanistic interpretability, and AI safety.
+Personal site of Muhammad Saram Hassan, a computer science graduate from LUMS
+working on the security of autonomous LLM agents.
 
-Built with Next.js (static export) and deployed via GitHub Pages.
-
-## Local dev
+Next.js static export, deployed to GitHub Pages by
+`.github/workflows/deploy.yml` on every push to `main`.
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Deploy
+## Where things live
 
-Pushes to `main` trigger the GitHub Actions workflow in `.github/workflows/deploy.yml`, which builds and deploys to GitHub Pages automatically.
+| What | Where |
+| --- | --- |
+| Name, email, links, publications | `src/lib/site.ts` |
+| Front page (bio, news, publications) | `src/app/page.tsx` |
+| Mountains, books, quotes | `src/app/other/page.tsx` |
+| Colours and type scale | `:root` in `src/app/globals.css` |
+| Social preview image | `src/app/opengraph-image.tsx` |
+
+`/research`, `/cv`, `/writing` and `/projects` are placeholders rendered by
+`src/components/ComingSoon.tsx`.

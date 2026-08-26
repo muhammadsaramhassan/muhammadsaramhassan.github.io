@@ -1,85 +1,88 @@
+import type { Metadata } from "next";
 import Masthead from "@/components/Masthead";
-import FooterColophon from "@/components/FooterColophon";
-import TweaksPanel from "@/components/TweaksPanel";
+import SiteFooter from "@/components/SiteFooter";
+import { og, site } from "@/lib/site";
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: "Contact",
-	description: "Get in touch with Muhammad Saram Hassan",
+	description:
+		"Get in touch with Muhammad Saram Hassan: email, GitHub, Google Scholar, and LinkedIn.",
+	alternates: { canonical: "/contact" },
+	openGraph: og({
+		title: "Contact · Muhammad Saram Hassan",
+		description: "Email, GitHub, Google Scholar, and LinkedIn.",
+		path: "/contact",
+	}),
 };
 
 export default function ContactPage() {
 	return (
 		<>
+			<a href="#main" className="skip-link">
+				Skip to content
+			</a>
 			<Masthead />
 
-			<main>
-				<section className="commission-bleed contact-page">
-					<div className="container">
-						<div className="c-eye">§ VI · Write to me</div>
-						<h3>
-							Got something <em>to say?</em> Send a Hi.
-						</h3>
-						<p>
-							I would love to hear fresh perspectives and new ideas. Ill do my
-							best to to jump back in within 48 hours.
-						</p>
-						<div className="cta-row">
-							<a href="mailto:saram.hassan1412@gmail.com" className="cta-gold">
-								write to me <span>→</span>
-							</a>
+			<main id="main" className="wrap pad-bottom">
+				<div className="page-head">
+					<h1>Contact</h1>
+					<p>
+						I&apos;m always glad to hear about new work, and I read everything.
+						I&apos;ll do my best to reply within 48 hours.
+					</p>
+				</div>
+
+				<ul className="contact-rows">
+					<li>
+						<span className="k">Email</span>
+						<span className="v">
+							<a href={`mailto:${site.email}`}>{site.email}</a>
+						</span>
+					</li>
+					<li>
+						<span className="k">CV</span>
+						<span className="v">
 							<a
-								href="/Muhammad_Saram_Hassan_s_Resume.pdf"
+								href={site.cvPdf}
 								target="_blank"
-								rel="noopener noreferrer"
-								className="cta-ghost-light">
-								download cv.pdf
+								rel="noopener noreferrer">
+								Download PDF
 							</a>
-						</div>
-						<div className="commission-meta-row">
-							<div>
-								<div className="k">email</div>
-								<div className="v">
-									<a href="mailto:saram.hassan1412@gmail.com">
-										saram.hassan1412 [at] gmail
-									</a>
-								</div>
-							</div>
-							<div>
-								<div className="k">elsewhere</div>
-								<div className="v">
-									<a
-										href="https://github.com/msaramhassan"
-										target="_blank"
-										rel="noopener noreferrer">
-										github
-									</a>{" "}
-									·{" "}
-									<a
-										href="https://linkedin.com/in/msaramhassan"
-										target="_blank"
-										rel="noopener noreferrer">
-										linkedin
-									</a>{" "}
-									·{" "}
-									<a
-										href="https://scholar.google.com/scholar?q=Muhammad+Saram+Hassan"
-										target="_blank"
-										rel="noopener noreferrer">
-										scholar
-									</a>
-								</div>
-							</div>
-							<div>
-								<div className="k">response time</div>
-								<div className="v">within 48h · UTC+5</div>
-							</div>
-						</div>
-					</div>
-				</section>
+						</span>
+					</li>
+					<li>
+						<span className="k">Elsewhere</span>
+						<span className="v">
+							<a
+								href={site.social.github}
+								target="_blank"
+								rel="noopener noreferrer">
+								GitHub
+							</a>{" "}
+							·{" "}
+							<a
+								href={site.social.scholar}
+								target="_blank"
+								rel="noopener noreferrer">
+								Google Scholar
+							</a>{" "}
+							·{" "}
+							<a
+								href={site.social.linkedin}
+								target="_blank"
+								rel="noopener noreferrer">
+								LinkedIn
+							</a>
+						</span>
+					</li>
+					<li>
+						<span className="k">Based in</span>
+						<span className="v">Lahore, Pakistan · UTC+5</span>
+					</li>
+				</ul>
 			</main>
 
-			<FooterColophon variant="portfolio" />
-			<TweaksPanel />
+			<SiteFooter />
 		</>
 	);
 }
