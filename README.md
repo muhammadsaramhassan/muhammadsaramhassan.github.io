@@ -2,7 +2,7 @@
 
 Personal site
 
-Plain static HTML/CSS — no build step, no dependencies. Deployed to GitHub
+Plain static HTML/CSS. no build step, no dependencies. Deployed to GitHub
 Pages by `.github/workflows/deploy.yml` on every push to `main`.
 
 Preview locally:
