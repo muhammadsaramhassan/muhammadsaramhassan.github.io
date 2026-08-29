@@ -261,6 +261,33 @@ main h2 {
 	color: var(--ink-dim);
 	padding: 0 6px;
 }
+/* In-preparation entries: plain-language description, revealed on hover on
+   devices that can hover, always visible on touch devices. */
+.p-desc {
+	display: block;
+	font-size: 15px;
+	color: var(--ink-mid);
+	line-height: 1.6;
+	margin-top: 5px;
+	max-width: 60ch;
+	text-wrap: pretty;
+}
+@media (hover: hover) {
+	.p-hover .p-desc {
+		display: none;
+	}
+	.p-hover:hover .p-desc,
+	.p-hover:focus .p-desc,
+	.p-hover:focus-within .p-desc {
+		display: block;
+	}
+	.p-hover .p-title {
+		cursor: help;
+		text-decoration: underline dotted var(--rule-strong);
+		text-underline-offset: 4px;
+	}
+}
+
 .plist-sub {
 	font-size: 15px;
 	font-weight: 600;
