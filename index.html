@@ -130,14 +130,16 @@
 				<span class="p-auth"><b>M. S. Hassan</b>, E. Jan, R. Kaur, E. Yeh, F. Zaffar, A. Gehani</span>
 				<span class="p-venue">ACM Conference on Reproducibility and Replicability (REP), 2026</span>
 				<span class="p-links"><a href="https://www.csl.sri.com/users/gehani/papers/REP-2026.Potemkin.pdf" target="_blank" rel="noopener noreferrer">pdf</a><i>&middot;</i><a href="https://github.com/SRI-CSL/PotemkinBenchmark_Reproducibility" target="_blank" rel="noopener noreferrer">code</a></span>
-				<span class="p-desc">The &ldquo;Potemkin Understanding&rdquo; paper argues that benchmarks credit LLMs with conceptual understanding they do not actually have. We reproduced both of its evaluation techniques and extended them to smaller, reasoning, and quantized models. The directional claims survive, but the reported scores are unstable, swinging up to 31% across identical runs, and reasoning models cut the incoherence sharply. That points to the inference regime, not the model class, as what drives these failures.</span>
+				<span class="p-desc">The "Potemkin Understanding in LLMs" paper argues that benchmarks credit LLMs with conceptual understanding they do not actually possess. In this work, we reproduced both of its evaluation techniques and extended our analysis to include both smaller and reasoning models. While we found that the original directional claims do stand, the reported scores are highly unstable varying by up to 31% across identical runs. We also observed that reasoning models significantly reduce this incoherence suggesting that these failures are driven by the inference regime rather than the underlying model itself.</span>
 			</li>
 			<li class="p-hover" tabindex="0">
 				<span class="p-title">Data Doping or True Intelligence? Evaluating the Transferability of Injected Knowledge in LLMs</span>
 				<span class="p-auth">E. Jan, M. Ali, <b>M. S. Hassan</b>, Y. Zaki, M. F. Zaffar</span>
 				<span class="p-venue">Findings of EMNLP, 2025</span>
 				<span class="p-links"><a href="https://aclanthology.org/2025.findings-emnlp.589.pdf" target="_blank" rel="noopener noreferrer">pdf</a><i>&middot;</i><a href="https://aclanthology.org/2025.findings-emnlp.589/" target="_blank" rel="noopener noreferrer">acl anthology</a><i>&middot;</i><a href="https://arxiv.org/abs/2505.17140" target="_blank" rel="noopener noreferrer">arxiv</a></span>
-				<span class="p-desc">We injected new knowledge into five model families, from 1.5B to 72B parameters, and tested whether the models could genuinely use it beyond the task they were fine-tuned on, or only recite it. Knowledge taught through comprehension-style tasks transferred at 48%, against 17% for surface-level mappings like translation, and retention grew from 38% to 72% with scale. How you teach a model matters as much as what you teach it.</span>
+				<span class="p-desc">We injected new knowledge into five model families and tested whether the models could genuinely use it beyond the task they were finetuned on or only recite it as it was given. We found that comprehension-style tasks led to substantially greater knowledge transfer than surface-level mappings such as translation. <br>
+				In a nutshell, how you teach a model matters as much as what you teach it.
+</span>
 			</li>
 		</ol>
 
@@ -146,12 +148,12 @@
 			<li class="p-hover" tabindex="0">
 				<span class="p-title">Compromised by Context: Systematizing Prompt Injection Against Autonomous LLM Agents</span>
 				<span class="p-venue">in preparation &middot; targeting IEEE S&amp;P 2027</span>
-				<span class="p-desc">An agent that browses the web will read whatever the web puts in front of it, and some of that text is written specifically to hijack it. I am mapping the full space of these attacks and the defenses proposed against them, to work out which defenses actually hold and which only look strong because nobody has pushed on them properly yet.</span>
+				<span class="p-desc">An agent that browses the web will read whatever the web puts in front of it, and some of that text is written specifically to hijack it. I am mapping the full space of these attacks and the defenses proposed against them to work out which defenses actually hold and which only look strong because nobody has pushed on them properly yet.</span>
 			</li>
 			<li class="p-hover" tabindex="0">
 				<span class="p-title">Escalate, Don&rsquo;t Improvise: Comparability in Autonomous Measurement Fleets (AmiClaw)</span>
 				<span class="p-venue">in preparation &middot; targeting HotMobile 2027</span>
-				<span class="p-desc">Measurement studies are still run by hand: a researcher designs the experiment, babysits the runs, and stitches the data together. I am building fleets of autonomous agents that run these studies themselves, which nobody has done yet. The catch is that improvising agents quietly produce incomparable results, so I argue an agent that hits ambiguity should escalate to a fixed protocol instead of improvising around it.</span>
+				<span class="p-desc">Measurement studies are still run by hand: a researcher designs the experiment, babysits the runs, and stitches the data together. I am building fleets of autonomous agents that run these studies themselves. The catch is that improvising agents could quietly produce incomparable results so I argue an agent that hits ambiguity should escalate it to a fixed protocol instead of improvising around it on its own.</span>
 			</li>
 			<li class="p-hover" tabindex="0">
 				<span class="p-title">SENTRY: Adversarial Agent Detection in Open Multi-Agent Systems</span>
@@ -162,8 +164,8 @@
 
 		<h2>Elsewhere</h2>
 		<p>
-			Away from the desk I am usually up a mountain with a telescope. There are
-			notes on that, and on the books I keep going back to,
+			Away from the desk I am usually up a mountain. There are
+			notes on that amongst other things, and on the writings I keep going back to,
 			<a href="/other.html">here</a>.
 		</p>
 	</main>
