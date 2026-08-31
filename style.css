@@ -178,8 +178,10 @@ main h2 {
 	line-height: 1.55;
 }
 .op-note {
-	color: var(--ink-mid);
-	font-style: italic;
+	color: var(--accent);
+	font-weight: 600;
+	border-left: 3px solid var(--accent-soft);
+	padding-left: 11px;
 }
 
 /* ── Icon links ── */
@@ -203,6 +205,13 @@ main h2 {
 	color: var(--accent);
 	border-color: var(--accent-soft);
 	background: var(--surface);
+}
+.iconlinks a.cv {
+	width: auto;
+	padding: 0 10px;
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
 }
 .iconlinks svg {
 	width: 17px;
@@ -233,6 +242,13 @@ main h2 {
 }
 
 /* ── Publications: plain list, no cards ── */
+@media (prefers-reduced-motion: reduce) {
+	.p-more[open] > .p-desc,
+	.p-more[open] > summary::before {
+		animation: none;
+		transition: none;
+	}
+}
 .plist li {
 	margin-bottom: 20px;
 }
@@ -261,8 +277,46 @@ main h2 {
 	color: var(--ink-dim);
 	padding: 0 6px;
 }
-/* In-preparation entries: plain-language description, revealed on hover on
-   devices that can hover, always visible on touch devices. */
+/* Plain-language description in a native disclosure dropdown. */
+.p-more {
+	margin-top: 4px;
+}
+.p-more > summary {
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
+	width: fit-content;
+	font-size: 14.5px;
+	color: var(--ink-dim);
+	cursor: pointer;
+	list-style: none;
+}
+.p-more > summary::-webkit-details-marker {
+	display: none;
+}
+.p-more > summary::before {
+	content: "";
+	width: 0;
+	height: 0;
+	border: 4px solid transparent;
+	border-left-color: currentColor;
+	transition: transform 0.18s ease;
+}
+.p-more[open] > summary::before {
+	transform: rotate(90deg) translateX(1px);
+}
+.p-more > summary:hover {
+	color: var(--accent);
+}
+.p-more[open] > .p-desc {
+	animation: p-desc-in 0.22s ease both;
+}
+@keyframes p-desc-in {
+	from {
+		opacity: 0;
+		transform: translateY(-3px);
+	}
+}
 .p-desc {
 	display: block;
 	font-size: 15px;
@@ -272,29 +326,6 @@ main h2 {
 	max-width: 60ch;
 	text-wrap: pretty;
 }
-@media (hover: hover) {
-	.p-hover .p-desc {
-		display: none;
-	}
-	.p-hover:hover .p-desc,
-	.p-hover:focus .p-desc,
-	.p-hover:focus-within .p-desc {
-		display: block;
-	}
-	.p-hover .p-title {
-		cursor: help;
-		text-decoration: underline dotted var(--rule-strong);
-		text-underline-offset: 4px;
-	}
-}
-
-.plist-sub {
-	font-size: 15px;
-	font-weight: 600;
-	color: var(--ink-mid);
-	margin: 26px 0 14px;
-}
-
 /* ── "Other" page rows & quotes ── */
 .rows > li {
 	border-bottom: 1px solid var(--rule);
