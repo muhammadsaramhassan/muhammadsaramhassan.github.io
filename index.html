@@ -102,6 +102,10 @@
 		<h2>News</h2>
 		<dl class="news">
 			<div class="news-row">
+				<dt>Oct 2026</dt>
+				<dd>My <a href="/papers/decomposing-error-in-continual-world-models.pdf" target="_blank" rel="noopener noreferrer">paper</a> on what endpoint accuracy hides when evaluating updates to continual world models was accepted at a NeurIPS 2026 workshop.</dd>
+			</div>
+			<div class="news-row">
 				<dt>Jun 2026</dt>
 				<dd>I presented my <a href="https://www.csl.sri.com/users/gehani/papers/REP-2026.Potemkin.pdf" target="_blank" rel="noopener noreferrer">paper</a> stress-testing the claim that LLMs understand what they say at <a href="https://acm-rep.github.io/2026/" target="_blank" rel="noopener noreferrer">ACM REP 2026</a> in Netherlands.</dd>
 			</div>
@@ -128,6 +132,13 @@
 
 		<h2>Publications</h2>
 		<ol class="plist">
+			<li>
+				<span class="p-title">Decomposing Error in Continual World Models</span>
+				<span class="p-auth"><b>M. S. Hassan</b>*, M. M. Irfan*, M. F. Zaffar &nbsp;(*equal contribution)</span>
+				<span class="p-venue">NeurIPS 2026 Workshop</span>
+				<span class="p-links"><a href="/papers/decomposing-error-in-continual-world-models.pdf" target="_blank" rel="noopener noreferrer">pdf</a><i>&middot;</i><a href="https://github.com/maani3/Error-Decomposition-World-Models" target="_blank" rel="noopener noreferrer">code</a></span>
+				<details class="p-more"><summary>Summary</summary><span class="p-desc">Continual world models are usually judged by how accurate they are after each update, but that does not tell you whether the update itself tracked what actually changed in the environment. We split endpoint error into the error a model inherited from before and the mismatch between how the model changed and how the environment changed. Endpoint error can favor throwing the old model away over faithfully revising it, while mismatch alone rewards keeping old bias. In controlled linear experiments the ranking of update rules flips on all 544 usable trials, and a learned neural model on a nonlinear simulator shows the same effect, shrinking as inherited error falls. We propose reporting all three errors together as the evaluation protocol.</span></details>
+			</li>
 			<li>
 				<span class="p-title">Understanding or Imitation? Auditing Conceptual Understanding and Reasoning in Large Language Models</span>
 				<span class="p-auth"><b>M. S. Hassan</b>, E. Jan, R. Kaur, E. Yeh, M. F. Zaffar, A. Gehani</span>
