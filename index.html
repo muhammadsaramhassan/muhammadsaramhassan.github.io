@@ -4,13 +4,13 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Muhammad Saram Hassan</title>
-	<meta name="description" content="Muhammad Saram Hassan is a computer scientist from LUMS working on the security of autonomous LLM agents. Published at ACM REP 2026 and Findings of EMNLP 2025." />
+	<meta name="description" content="Muhammad Saram Hassan is a computer scientist from LUMS working on the security and privacy of autonomous AI agents: measuring how they are attacked and misused in the wild, and checking whether published claims about AI systems reproduce. Published at ACM REP 2026 and Findings of EMNLP 2025." />
 	<link rel="canonical" href="https://muhammadsaramhassan.github.io/" />
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Muhammad Saram Hassan" />
 	<meta property="og:title" content="Muhammad Saram Hassan" />
-	<meta property="og:description" content="Security of autonomous LLM agents. SRI International, LUMS." />
+	<meta property="og:description" content="Security and privacy of autonomous AI agents: measurement, misuse in the wild, reproducibility. SRI International, LUMS." />
 	<meta property="og:url" content="https://muhammadsaramhassan.github.io/" />
 	<meta property="og:image" content="https://muhammadsaramhassan.github.io/og.png" />
 	<meta name="twitter:card" content="summary_large_image" />
@@ -34,11 +34,13 @@
 		},
 		"homeLocation": { "@type": "Place", "name": "Lahore, Pakistan" },
 		"knowsAbout": [
-			"LLM Agent Security",
+			"AI Agent Security",
 			"Prompt Injection",
-			"AI Safety",
-			"Interpretability",
-			"Large Language Models"
+			"Jailbreak Attacks",
+			"Security Measurement",
+			"Reproducibility",
+			"Trustworthy AI",
+			"Web Privacy"
 		],
 		"sameAs": [
 			"https://github.com/muhammadsaramhassan",
@@ -81,10 +83,12 @@
 		</p>
 
 		<p>
-			My research focuses on the security of autonomous LLM agents. I study
-			whether autonomous LLM agents can be trusted, develop methods to detect
-			compromised or malicious agents, and build evaluation frameworks that
-			test whether claims about LLM behavior actually hold up.
+			My research focuses on the security of autonomous AI agents, mostly
+			through measurement. I study how agents are attacked and misused in
+			the wild, whether published claims about AI systems hold up when
+			someone else reruns them, and how to tell a compromised or
+			adversarial agent apart from its behavior alone, since what an agent
+			says about itself is not evidence.
 		</p>
 
 		<p>
@@ -97,7 +101,15 @@
 			at NYU Abu Dhabi.
 		</p>
 
-		<p class="op-note">I am applying to PhD programs this cycle for Fall 2027 entry.</p>
+		<p class="op-note">I am applying to PhD and research-based master&rsquo;s programs this cycle for Fall 2027 entry.</p>
+
+		<h2>Research Interests</h2>
+		<ul class="interests">
+			<li>Security and privacy</li>
+			<li>AI agent security</li>
+			<li>Web privacy and transparency</li>
+			<li>Security measurement</li>
+		</ul>
 
 		<h2>News</h2>
 		<dl class="news">
@@ -107,7 +119,7 @@
 			</div>
 			<div class="news-row">
 				<dt>Jun 2026</dt>
-				<dd>I presented my <a href="https://www.csl.sri.com/users/gehani/papers/REP-2026.Potemkin.pdf" target="_blank" rel="noopener noreferrer">paper</a> stress-testing the claim that LLMs understand what they say at <a href="https://acm-rep.github.io/2026/" target="_blank" rel="noopener noreferrer">ACM REP 2026</a> in Netherlands.</dd>
+				<dd>I presented my <a href="https://www.csl.sri.com/users/gehani/papers/REP-2026.Potemkin.pdf" target="_blank" rel="noopener noreferrer">reproducibility study</a> of the claim that LLMs do not understand what they say at <a href="https://acm-rep.github.io/2026/" target="_blank" rel="noopener noreferrer">ACM REP 2026</a> in Netherlands.</dd>
 			</div>
 			<div class="news-row">
 				<dt>May 2026</dt>
@@ -126,7 +138,7 @@
 			</div>
 			<div class="news-row">
 				<dt>Jan 2025</dt>
-				<dd>Joined the Internet Security &amp; Privacy Lab at LUMS researching prompt injection attacks against autonomous web agents and techniques for identifying agent-generated traffic in the wild.</dd>
+				<dd>Joined the Internet Security &amp; Privacy Lab at LUMS to study prompt injection attacks against autonomous web agents, and to measure how much web traffic in the wild is already agent-generated.</dd>
 			</div>
 		</dl>
 
@@ -144,7 +156,7 @@
 				<span class="p-auth"><b>M. S. Hassan</b>, E. Jan, R. Kaur, E. Yeh, M. F. Zaffar, A. Gehani</span>
 				<span class="p-venue">ACM Conference on Reproducibility and Replicability (REP), 2026</span>
 				<span class="p-links"><a href="https://www.csl.sri.com/users/gehani/papers/REP-2026.Potemkin.pdf" target="_blank" rel="noopener noreferrer">pdf</a><i>&middot;</i><a href="https://github.com/SRI-CSL/PotemkinBenchmark_Reproducibility" target="_blank" rel="noopener noreferrer">code</a></span>
-				<details class="p-more"><summary>Summary</summary><span class="p-desc">The "Potemkin Understanding in LLMs" paper argues that benchmarks credit LLMs with conceptual understanding they do not actually possess. In this work, we reproduced both of its evaluation techniques and extended our analysis to include both smaller and reasoning models. While we found that the original directional claims do stand, the reported scores are highly unstable varying by up to 51% across identical runs. We also observed that reasoning models significantly reduce this incoherence suggesting that these failures are driven by the inference regime rather than the underlying model itself.</span></details>
+				<details class="p-more"><summary>Summary</summary><span class="p-desc">The "Potemkin Understanding in LLMs" paper (ICML 2025) argues that benchmarks credit LLMs with conceptual understanding they do not possess. We independently reproduced both of its evaluation techniques and extended them to smaller and reasoning models. The directional claims stand, but the reported scores are unstable, varying by up to 51% across identical runs, and the original setup lets a model grade its own answers: switching to a cross-model judge shifts the headline rate by 0.11. Reasoning models cut the incoherence by an order of magnitude, which points to the inference regime rather than the model. The point is that a single, self-graded run is not enough evidence for a claim about LLMs.</span></details>
 			</li>
 			<li>
 				<span class="p-title">Data Doping or True Intelligence? Evaluating the Transferability of Injected Knowledge in LLMs</span>
@@ -161,17 +173,17 @@
 			<li>
 				<span class="p-title">SoK: Systematizing Prompt Injection Against Autonomous LLM Agents</span>
 				<span class="p-venue">in preparation &middot; targeting IEEE S&amp;P 2027</span>
-				<details class="p-more"><summary>Summary</summary><span class="p-desc">An agent that browses the web will read whatever the web puts in front of it, and some of that text is written specifically to hijack it. I am mapping the full space of these attacks and the defenses proposed against them to work out which defenses actually hold and which only look strong because nobody has pushed on them properly yet.</span></details>
+				<details class="p-more"><summary>Summary</summary><span class="p-desc">An agent that browses the web will read whatever the web puts in front of it, and some of that text is written specifically to hijack it. Across 84 papers I am mapping these attacks by where the adversarial text enters the agent loop (user prompt, web content, memory, tool outputs, hidden HTML) and testing which defenses actually hold. One early finding: a model&rsquo;s resistance to attacks in the user prompt says little about attacks arriving through tools or memory, so jailbreak-style evaluations do not transfer to agents.</span></details>
+			</li>
+			<li>
+				<span class="p-title">SENTRY: Adversarial Agent Detection in Open Multi-Agent Systems</span>
+				<span class="p-venue">in progress</span>
+				<details class="p-more"><summary>Summary</summary><span class="p-desc">Agents from different owners are starting to interact in open systems, and some of them will be malicious or misused. Nothing about an agent&rsquo;s label or self-description tells you which. SENTRY asks whether honest agents can tell an adversarial peer apart from its observable behavior alone, early enough to matter.</span></details>
 			</li>
 			<li>
 				<span class="p-title">Escalate, Don&rsquo;t Improvise: Comparability in Autonomous Measurement Fleets (AmiClaw)</span>
 				<span class="p-venue">in preparation &middot; targeting HotMobile 2027</span>
 				<details class="p-more"><summary>Summary</summary><span class="p-desc">Measurement studies are still run by hand: a researcher designs the experiment, babysits the runs, and stitches the data together. I am building fleets of autonomous agents that run these studies themselves. The catch is that improvising agents could quietly produce incomparable results so I argue an agent that hits ambiguity should escalate it to a fixed protocol instead of improvising around it on its own.</span></details>
-			</li>
-			<li>
-				<span class="p-title">SENTRY: Adversarial Agent Detection in Open Multi-Agent Systems</span>
-				<span class="p-venue">in progress</span>
-				<details class="p-more"><summary>Summary</summary><span class="p-desc">In an open system where agents from different owners interact, some of them will be malicious, and nothing about an agent&rsquo;s label tells you which. SENTRY asks whether honest agents can tell an adversarial peer apart from its behavior alone, early enough to matter.</span></details>
 			</li>
 		</ol>
 

@@ -219,6 +219,18 @@ main h2 {
 	fill: currentColor;
 }
 
+/* ── Research interests ── */
+.interests {
+	list-style: disc;
+	padding-left: 22px;
+}
+.interests li {
+	padding: 0 0 6px 2px;
+}
+.interests li::marker {
+	color: var(--ink-dim);
+}
+
 /* ── News: date left, entry right ── */
 .news-row {
 	display: grid;
