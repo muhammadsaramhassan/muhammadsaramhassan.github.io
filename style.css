@@ -427,3 +427,71 @@ main h2 {
 		gap: 4px;
 	}
 }
+
+/* ── System diagrams: inline SVG inside each paper's dropdown ── */
+.diagram {
+	margin: 14px 0 6px;
+	padding: 16px 16px 12px;
+	border: 1px solid var(--rule);
+	border-radius: 10px;
+	background: var(--surface);
+}
+.diagram figcaption {
+	margin-top: 12px;
+	font-size: 13.5px;
+	line-height: 1.55;
+	color: var(--ink-mid);
+	max-width: 60ch;
+}
+.dg {
+	display: block;
+	width: 100%;
+	height: auto;
+	overflow: visible;
+}
+.dg-tall {
+	display: none;
+	max-width: 340px;
+	margin: 0 auto;
+}
+@media (max-width: 640px) {
+	.dg-wide { display: none; }
+	.dg-tall { display: block; }
+	.diagram { padding: 12px 8px 10px; }
+}
+.dg text {
+	font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+	fill: var(--ink);
+}
+.dg .dg-t { font-size: 13px; font-weight: 700; }
+.dg .dg-s { font-size: 11px; font-weight: 500; fill: var(--ink-mid); }
+.dg .dg-n { font-size: 22px; font-weight: 700; fill: var(--accent); }
+.dg .dg-h { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; fill: var(--ink-dim); }
+.dg .dg-h-key { fill: var(--accent); }
+.dg-box,
+.dg-chip {
+	fill: var(--bg);
+	stroke: var(--rule-strong);
+	stroke-width: 1;
+}
+.dg-keybox {
+	fill: color-mix(in srgb, var(--accent) 9%, var(--bg));
+	stroke: var(--accent);
+	stroke-width: 1.25;
+}
+.dg-stage {
+	fill: none;
+	stroke: var(--rule);
+	stroke-width: 1;
+}
+.dg-stage-key {
+	fill: color-mix(in srgb, var(--accent) 4%, transparent);
+	stroke: var(--accent-soft);
+	stroke-width: 1;
+}
+.dg-line {
+	fill: none;
+	stroke: var(--ink-dim);
+	stroke-width: 1.25;
+}
+.dg-head { fill: var(--ink-dim); }
